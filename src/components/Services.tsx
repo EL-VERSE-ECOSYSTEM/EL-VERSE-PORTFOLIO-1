@@ -49,7 +49,7 @@ const Services = () => {
       title: "NEXEL",
       description: "Revolutionary social media platform",
       details: "The future of authentic social connection. Developed by our elite 70+ tech team, NEXEL redefines social media with privacy-first design, AI-powered content curation, and meaningful community building.",
-      status: "Coming August 2025",
+      status: "Coming August 2026",
       link: "#",
       color: "bg-success",
       logo: nexelLogo,
@@ -61,7 +61,7 @@ const Services = () => {
       title: "EL SPACE",
       description: "Freelance arm of EL VERSE TECHNOLOGIES",
       details: "Next-generation platform revolutionizing how tech professionals connect with enterprises. Powered by our ecosystem of 70+ experts, it offers AI-powered matching and seamless project collaboration.",
-      status: "Coming July 2025",
+      status: "Coming July 2026",
       link: "#",
       color: "bg-warning",
       logo: elspaceLogo,
@@ -73,7 +73,7 @@ const Services = () => {
       title: "ELITES",
       description: "West Africa's premier tech academy",
       details: "Revolutionary tech education institute transforming careers across West Africa. Led by our 70+ industry professionals, we provide curriculum and placement programs for the next tech leaders.",
-      status: "Coming June 2025",
+      status: "Coming June 2026",
       link: "#",
       color: "bg-success",
       logo: elitesLogo,
@@ -83,7 +83,7 @@ const Services = () => {
 
   const getStatusColor = (status: string) => {
     if (status === "Active") return "bg-success text-success-foreground";
-    if (status.includes("2025")) return "bg-primary text-primary-foreground";
+    if (status.includes("2026")) return "bg-primary text-primary-foreground";
     return "bg-warning text-warning-foreground";
   };
 

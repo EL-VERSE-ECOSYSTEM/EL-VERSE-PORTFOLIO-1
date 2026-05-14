@@ -26,30 +26,22 @@ const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Services
-            </button>
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              About
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              Contact
-            </button>
+            {['services', 'about', 'contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className="group relative text-muted-foreground hover:text-primary transition-all duration-300 font-medium capitalize"
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+              </button>
+            ))}
             <Button 
               size="sm" 
-              className="bg-gradient-primary hover:opacity-90"
+              className="bg-gradient-primary hover:opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-md shadow-primary/20"
               onClick={() => window.open("https://wa.link/4cwtqf", "_blank")}
             >
-              <Phone className="w-4 h-4 mr-2" />
+              <Phone className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform" />
               Get Quote
             </Button>
           </div>
@@ -64,38 +56,27 @@ const Navigation = () => {
         </div>
         
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+        <div className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-64 opacity-100 py-4 border-t border-border' : 'max-h-0 opacity-0'}`}>
+          <div className="flex flex-col space-y-4 px-2">
+            {['services', 'about', 'contact'].map((item) => (
               <button 
-                onClick={() => scrollToSection('services')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className="text-left text-muted-foreground hover:text-primary transition-all duration-300 font-medium capitalize py-1 px-2 rounded-md hover:bg-primary/5"
               >
-                Services
+                {item}
               </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
-              >
-                Contact
-              </button>
-              <Button 
-                size="sm" 
-                className="bg-gradient-primary hover:opacity-90 w-fit"
-                onClick={() => window.open("https://wa.link/4cwtqf", "_blank")}
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Get Quote
-              </Button>
-            </div>
+            ))}
+            <Button
+              size="sm"
+              className="bg-gradient-primary hover:opacity-90 w-fit transition-all duration-300 transform hover:scale-[1.02]"
+              onClick={() => window.open("https://wa.link/4cwtqf", "_blank")}
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              Get Quote
+            </Button>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );
