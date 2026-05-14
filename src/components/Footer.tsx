@@ -94,7 +94,7 @@ const Footer = () => {
                 <a href="#" className="hover:text-primary transition-colors">NEXEL (2026)</a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">ELSPACE (2026)</a>
+                <a href="#" className="hover:text-primary transition-colors">EL SPACE (2026)</a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary transition-colors">ELITES (ACTIVE)</a>
