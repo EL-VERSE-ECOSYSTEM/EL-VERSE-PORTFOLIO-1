@@ -34,10 +34,10 @@ const Hero = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-opacity">
-            Explore Our Universe <ArrowRight className="ml-2 w-5 h-5" />
+          <Button size="lg" className="bg-gradient-primary hover:opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-primary/20">
+            Explore Our Universe <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
-          <Button variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10">
+          <Button variant="outline" size="lg" className="border-primary/50 hover:bg-primary/10 transition-all duration-300 transform hover:scale-105 active:scale-95">
             Meet Our Team
           </Button>
         </div>

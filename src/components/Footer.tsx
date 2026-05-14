@@ -72,7 +72,7 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <a
-                  href="https://elcoders-portfolio-web.vercel.app/"
+                  href="https://elcoders-devs.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
@@ -91,13 +91,13 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">NEXEL (2026)</a>
+                <a href="#" className="hover:text-primary transition-colors">NEXEL (Aug 2025)</a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">EL SPACE (2026)</a>
+                <a href="#" className="hover:text-primary transition-colors">EL SPACE (July 2025)</a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">ELITES (ACTIVE)</a>
+                <a href="#" className="hover:text-primary transition-colors">ELITES (June 2025)</a>
               </li>
             </ul>
           </div>
