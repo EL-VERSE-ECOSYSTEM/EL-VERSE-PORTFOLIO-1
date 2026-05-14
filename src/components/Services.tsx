@@ -26,7 +26,7 @@ const Services = () => {
       description: "Elite software development powerhouse",
       details: "Premier team of 70+ expert developers crafting cutting-edge web applications, mobile solutions, and enterprise-grade software that transforms businesses and accelerates digital innovation across Africa.",
       status: "Active",
-      link: "https://elcoders-portfolio-web.vercel.app/",
+      link: "https://elcoders-devs.vercel.app/",
       color: "bg-primary",
       logo: elcodersLogo,
       features: ["Full-Stack Development", "Automations", "Mobile Applications", "Enterprise Solutions", "AI Development", "Blockchain", "Backend and Frontend Development", "Cloud Architecture", "DevOps & Azure Deployment", "API Integration"]
@@ -49,7 +49,7 @@ const Services = () => {
       title: "NEXEL",
       description: "Revolutionary social media platform",
       details: "The future of authentic social connection. Developed by our elite 70+ tech team, NEXEL redefines social media with privacy-first design, AI-powered content curation, and meaningful community building.",
-      status: "Coming May 2026",
+      status: "Coming August 2025",
       link: "#",
       color: "bg-success",
       logo: nexelLogo,
@@ -61,7 +61,7 @@ const Services = () => {
       title: "EL SPACE",
       description: "Freelance arm of EL VERSE TECHNOLOGIES",
       details: "Next-generation platform revolutionizing how tech professionals connect with enterprises. Powered by our ecosystem of 70+ experts, it offers AI-powered matching and seamless project collaboration.",
-      status: "Coming April/May 2026",
+      status: "Coming July 2025",
       link: "#",
       color: "bg-warning",
       logo: elspaceLogo,
@@ -73,7 +73,7 @@ const Services = () => {
       title: "ELITES",
       description: "West Africa's premier tech academy",
       details: "Revolutionary tech education institute transforming careers across West Africa. Led by our 70+ industry professionals, we provide curriculum and placement programs for the next tech leaders.",
-      status: "Active",
+      status: "Coming June 2025",
       link: "#",
       color: "bg-success",
       logo: elitesLogo,
@@ -83,7 +83,7 @@ const Services = () => {
 
   const getStatusColor = (status: string) => {
     if (status === "Active") return "bg-success text-success-foreground";
-    if (status.includes("2026")) return "bg-primary text-primary-foreground";
+    if (status.includes("2025")) return "bg-primary text-primary-foreground";
     return "bg-warning text-warning-foreground";
   };
 
@@ -156,17 +156,17 @@ const Services = () => {
                       <Button 
                         variant="default" 
                         size="sm" 
-                        className="flex-1 bg-gradient-primary hover:opacity-90 text-white font-medium"
+                        className="flex-1 bg-gradient-primary hover:opacity-90 text-white font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-95"
                         onClick={() => window.open(service.link, '_blank')}
                       >
-                        Explore Now <ExternalLink className="w-4 h-4 ml-2" />
+                        Explore Now <ExternalLink className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
                       </Button>
                     ) : (
                       <div className="flex gap-2 w-full">
-                        <Button variant="outline" size="sm" className="flex-1 border-primary/50 hover:bg-primary/10" disabled>
+                        <Button variant="outline" size="sm" className="flex-1 border-primary/50 hover:bg-primary/10 transition-colors" disabled>
                           {service.status.includes("Coming") ? "Coming Soon" : "Learn More"}
                         </Button>
-                        <Button size="sm" className="bg-primary/20 hover:bg-primary/30 text-primary border-primary/50">
+                        <Button size="sm" className="bg-primary/20 hover:bg-primary/30 text-primary border-primary/50 transition-all duration-300 transform hover:scale-[1.02] active:scale-95">
                           Notify Me
                         </Button>
                       </div>
