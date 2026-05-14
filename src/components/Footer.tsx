@@ -27,8 +27,19 @@ const Footer = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Construct the mailto link as a fallback
+    const subject = encodeURIComponent(`New App Message Request from ${formState.fullName}`);
+    const body = encodeURIComponent(
+      `Full Name: ${formState.fullName}\n` +
+      `Email: ${formState.email}\n` +
+      `Phone: ${formState.phoneNumber}\n\n` +
+      `Message:\n${formState.message}`
+    );
+    const mailtoUrl = `mailto:elcoderssoftwares12@gmail.com?subject=${subject}&body=${body}`;
+
     try {
-      // Logic to send to elcoderssoftwares12@gmail.com
+      // Attempt to send via API first
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -47,11 +58,21 @@ const Footer = () => {
         setFormState({ fullName: "", email: "", phoneNumber: "", message: "" });
         setTimeout(() => setIsSent(false), 5000);
       } else {
-        toast.error("Failed to send message.");
+        // If API fails, fallback to mailto
+        window.location.href = mailtoUrl;
+        setIsSent(true);
+        toast.success("Opening your email client...");
+        setFormState({ fullName: "", email: "", phoneNumber: "", message: "" });
+        setTimeout(() => setIsSent(false), 5000);
       }
     } catch (error) {
       console.error(error);
-      toast.error("Failed to send message.");
+      // Fallback to mailto on network error
+      window.location.href = mailtoUrl;
+      setIsSent(true);
+      toast.success("Opening your email client...");
+      setFormState({ fullName: "", email: "", phoneNumber: "", message: "" });
+      setTimeout(() => setIsSent(false), 5000);
     } finally {
       setIsSubmitting(false);
     }
