@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://elverse-tech-universe.vercel.app/sitemap.xml
+Sitemap: https://el-verse-connect.vercel.app/sitemap.xml
