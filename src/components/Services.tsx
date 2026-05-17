@@ -59,7 +59,7 @@ const Services = () => {
       id: "elspace",
       icon: Network,
       title: "EL SPACE",
-      description: "Freelance arm of EL VERSE TECHNOLOGIES",
+      description: "Freelance arm of EL VERSE ECOSYSTEM",
       details: "Next-generation platform revolutionizing how tech professionals connect with enterprises. Powered by our ecosystem of 70+ experts, it offers AI-powered matching and seamless project collaboration.",
       status: "Active",
       link: "https://el-space.vercel.app/",

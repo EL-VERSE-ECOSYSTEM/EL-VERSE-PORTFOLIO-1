@@ -29,7 +29,7 @@ const Hero = () => {
             <AnimatedLogo size="lg" />
           </div>
           <h1 className="text-6xl md:text-9xl font-black font-display bg-gradient-primary bg-clip-text text-transparent tracking-tighter leading-none mb-4">
-            EL VERSE
+            EL VERSE ECOSYSTEM
           </h1>
           <div className="h-1.5 w-32 bg-gradient-primary rounded-full mb-8" />
         </motion.div>
