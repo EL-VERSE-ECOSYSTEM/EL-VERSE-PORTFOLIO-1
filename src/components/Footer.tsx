@@ -8,6 +8,8 @@ import { Button } from "./ui/button";
 import React from "react";
 import { toast } from "sonner";
 
+import { motion } from "framer-motion";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -79,97 +81,74 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+    <footer className="relative bg-background/50 backdrop-blur-xl border-t border-primary/10 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 pointer-events-none" />
+
+      <div className="container mx-auto px-4 py-20 relative z-10">
+        <div className="grid md:grid-cols-4 gap-12 lg:gap-20">
           {/* Brand Section */}
-          <div>
-            <div className="flex items-center space-x-3 mb-6">
-              <img src={elVerseLogo} alt="EL VERSE" className="w-10 h-10" />
-              <span className="text-2xl font-bold font-brand">EL VERSE</span>
+          <div className="space-y-8">
+            <div className="flex items-center space-x-4 group">
+              <div className="bg-primary/10 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-500">
+                <img src={elVerseLogo} alt="EL VERSE" className="w-10 h-10 object-contain" />
+              </div>
+              <span className="text-3xl font-black tracking-tighter font-brand">EL VERSE</span>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
-              Building the future of African technology through comprehensive solutions,
-              training, and innovation. Your gateway to the tech universe.
+            <p className="text-muted-foreground max-w-sm leading-relaxed font-medium">
+              Architecting the digital future of Africa. We bridge global innovation with local excellence.
             </p>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">Software Development</Badge>
-              <Badge variant="secondary">Tech Training</Badge>
-              <Badge variant="secondary">Social Innovation</Badge>
-              <Badge variant="secondary">Talent Connection</Badge>
+              {["Software", "Training", "Innovation", "Talent"].map((tag) => (
+                <Badge key={tag} variant="secondary" className="bg-primary/5 hover:bg-primary/10 text-[10px] font-bold uppercase tracking-widest border-primary/10 px-3 py-1">
+                  {tag}
+                </Badge>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Our Universe</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a
-                  href="https://elcoders-devs.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  ELCODERS
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://el-access-2-registration.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-primary transition-colors"
-                >
-                  EL ACCESS
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">NEXEL (Aug 2026)</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">EL SPACE (July 2026)</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary transition-colors">ELITES (June 2026)</a>
-              </li>
+            <h4 className="text-sm font-black uppercase tracking-[0.2em] mb-8 text-foreground/70">Our Universe</h4>
+            <ul className="space-y-4 text-sm font-bold">
+              {[
+                { name: "ELCODERS", url: "https://elcoders-connect.vercel.app/" },
+                { name: "EL ACCESS", url: "https://el-access.vercel.app/" },
+                { name: "ELITES", url: "https://elites-connect.vercel.app/" },
+                { name: "EL SPACE", url: "https://el-space.vercel.app/" },
+                { name: "NEXEL", url: "#", note: "Aug 2026" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-all flex items-center gap-2 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary/20 group-hover:bg-primary transition-colors" />
+                    {link.name} {link.note && <span className="text-[10px] opacity-50">({link.note})</span>}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Connect */}
           <div>
-            <h4 className="font-semibold mb-4">Connect</h4>
-            <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>
-                <a href="https://wa.link/4cwtqf" className="hover:text-primary transition-colors">
-                  WhatsApp(NGN): +234 806 190 8715
-                </a>
-              </li>
-              <li>
-                <a href="mailto:elcoderssoftwares12@gmail.com" className="hover:text-primary transition-colors">
-                  elcoderssoftwares12@gmail.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://twitter.com/ElVerse27"
-                  className="hover:text-primary transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Twitter: @ElVerse27
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com/el_verse1"
-                  className="hover:text-primary transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram: el_verse1
-                </a>
-              </li>
+            <h4 className="text-sm font-black uppercase tracking-[0.2em] mb-8 text-foreground/70">Connect</h4>
+            <ul className="space-y-4 text-sm font-bold">
+              {[
+                { label: "WhatsApp", val: "+234 806 190 8715", href: "https://wa.link/4cwtqf" },
+                { label: "Email", val: "support@elverse.com", href: "mailto:elcoderssoftwares12@gmail.com" },
+                { label: "Twitter", val: "@ElVerse27", href: "https://twitter.com/ElVerse27" },
+                { label: "Instagram", val: "el_verse1", href: "https://instagram.com/el_verse1" }
+              ].map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors flex flex-col">
+                    <span className="text-[10px] uppercase text-muted-foreground/50 tracking-widest">{item.label}</span>
+                    <span>{item.val}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
