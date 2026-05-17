@@ -152,73 +152,111 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div className="relative overflow-hidden p-6 rounded-2xl bg-card/50 border border-primary/20 shadow-xl transition-all duration-500 hover:shadow-primary/10">
-            <h4 className="font-bold text-xl mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              App Message Request
-            </h4>
-
-            {isSent ? (
-              <div className="flex flex-col items-center justify-center space-y-4 py-8 animate-in fade-in zoom-in duration-500">
-                <div className="w-16 h-16 bg-success/20 rounded-full flex items-center justify-center text-success">
-                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                  </svg>
+          {/* Contact Info - App Request UI */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-10 group-hover:opacity-20 transition-opacity" />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative overflow-hidden p-8 rounded-[2rem] bg-card/30 backdrop-blur-2xl border border-primary/10 shadow-2xl"
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Rocket className="w-5 h-5 text-primary" />
                 </div>
-                <p className="font-semibold text-success text-center">Request Sent Successfully!</p>
-                <p className="text-xs text-muted-foreground text-center">We'll get back to you shortly.</p>
+                <h4 className="font-black text-xl tracking-tight uppercase">
+                  App Request
+                </h4>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4 animate-in fade-in duration-500">
-                <Input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name"
-                  value={formState.fullName}
-                  onChange={handleInputChange}
-                  className="bg-background/50 border-primary/20 focus:border-primary transition-all duration-300"
-                  required
-                />
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formState.email}
-                  onChange={handleInputChange}
-                  className="bg-background/50 border-primary/20 focus:border-primary transition-all duration-300"
-                  required
-                />
-                <Input
-                  type="tel"
-                  name="phoneNumber"
-                  placeholder="Phone Number"
-                  value={formState.phoneNumber}
-                  onChange={handleInputChange}
-                  className="bg-background/50 border-primary/20 focus:border-primary transition-all duration-300"
-                  required
-                />
-                <Textarea
-                  name="message"
-                  placeholder="Your Project Idea or Message"
-                  value={formState.message}
-                  onChange={handleInputChange}
-                  className="bg-background/50 border-primary/20 focus:border-primary transition-all duration-300 min-h-[100px]"
-                  required
-                />
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-primary hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-md shadow-primary/20"
+
+              {isSent ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center space-y-6 py-12"
                 >
-                  {isSubmitting ? (
-                    <span className="flex items-center gap-2">
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Sending...
-                    </span>
-                  ) : "Send Request"}
-                </Button>
-              </form>
-            )}
+                  <div className="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center text-success relative">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="absolute inset-0 bg-success/20 rounded-full animate-ping"
+                    />
+                    <svg className="w-10 h-10 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="text-center">
+                    <p className="font-black text-xl mb-2 text-success uppercase">Mission Successful</p>
+                    <p className="text-sm font-medium text-muted-foreground">Our team will be in touch within 24 hours.</p>
+                  </div>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="relative group/input">
+                      <Input
+                        type="text"
+                        name="fullName"
+                        placeholder="Full Name"
+                        value={formState.fullName}
+                        onChange={handleInputChange}
+                        className="bg-background/20 border-primary/5 focus:border-primary/30 h-12 rounded-xl transition-all duration-300"
+                        required
+                      />
+                    </div>
+                    <div className="relative group/input">
+                      <Input
+                        type="email"
+                        name="email"
+                        placeholder="Work Email"
+                        value={formState.email}
+                        onChange={handleInputChange}
+                        className="bg-background/20 border-primary/5 focus:border-primary/30 h-12 rounded-xl transition-all duration-300"
+                        required
+                      />
+                    </div>
+                    <div className="relative group/input">
+                      <Input
+                        type="tel"
+                        name="phoneNumber"
+                        placeholder="Phone Number"
+                        value={formState.phoneNumber}
+                        onChange={handleInputChange}
+                        className="bg-background/20 border-primary/5 focus:border-primary/30 h-12 rounded-xl transition-all duration-300"
+                        required
+                      />
+                    </div>
+                    <div className="relative group/input">
+                      <Textarea
+                        name="message"
+                        placeholder="Briefly describe your vision..."
+                        value={formState.message}
+                        onChange={handleInputChange}
+                        className="bg-background/20 border-primary/5 focus:border-primary/30 rounded-xl transition-all duration-300 min-h-[120px] resize-none"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-14 bg-gradient-primary hover:opacity-90 transition-all duration-300 transform hover:scale-[1.02] active:scale-98 shadow-xl shadow-primary/20 font-black text-sm uppercase tracking-widest"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center gap-3">
+                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Transmitting...
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        Launch Project <Rocket className="w-4 h-4" />
+                      </span>
+                    )}
+                  </Button>
+                </form>
+              )}
+            </motion.div>
           </div>
         </div>
 

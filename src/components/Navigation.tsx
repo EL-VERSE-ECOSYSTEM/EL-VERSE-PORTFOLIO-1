@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import elVerseLogo from "@/assets/el-verse-logo-new.png";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,14 +38,11 @@ const Navigation = () => {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-3 cursor-pointer"
+            className="flex items-center space-x-4 cursor-pointer group"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full animate-pulse" />
-              <img src={elVerseLogo} alt="EL VERSE" className="w-10 h-10 relative z-10" />
-            </div>
-            <span className="text-2xl font-black font-brand tracking-tighter bg-gradient-primary bg-clip-text text-transparent">
+            <AnimatedLogo size="sm" />
+            <span className="text-2xl font-black font-brand tracking-tighter bg-gradient-primary bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
               EL VERSE
             </span>
           </motion.div>
@@ -85,10 +82,32 @@ const Navigation = () => {
           <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-foreground relative z-50"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X className="w-8 h-8" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu className="w-8 h-8" />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.button>
         </div>
         
@@ -96,29 +115,42 @@ const Navigation = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden bg-background/95 backdrop-blur-2xl mt-4 rounded-2xl border border-primary/10 shadow-2xl shadow-primary/5"
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed inset-0 z-40 md:hidden bg-background/98 backdrop-blur-3xl flex flex-col justify-center items-center"
             >
-              <div className="flex flex-col space-y-4 p-6">
-                {['services', 'about', 'contact'].map((item) => (
-                  <button
+              <div className="flex flex-col space-y-8 p-6 text-center">
+                {['services', 'about', 'contact'].map((item, index) => (
+                  <motion.button
                     key={item}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index }}
                     onClick={() => scrollToSection(item)}
-                    className="text-left text-lg font-bold text-muted-foreground hover:text-primary transition-all duration-300 capitalize py-2 border-b border-primary/5"
+                    className="text-4xl font-black text-foreground hover:text-primary transition-all duration-300 capitalize tracking-tighter"
                   >
                     {item}
-                  </button>
+                  </motion.button>
                 ))}
-                <Button
-                  size="lg"
-                  className="bg-gradient-primary hover:opacity-90 w-full transition-all duration-300 font-bold shadow-lg shadow-primary/20"
-                  onClick={() => window.open("https://wa.link/4cwtqf", "_blank")}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
                 >
-                  <Phone className="w-4 h-4 mr-2" />
-                  GET QUOTE
-                </Button>
+                  <Button
+                    size="lg"
+                    className="h-16 px-10 text-xl bg-gradient-primary hover:opacity-90 w-full transition-all duration-300 font-black shadow-2xl shadow-primary/30"
+                    onClick={() => {
+                      window.open("https://wa.link/4cwtqf", "_blank");
+                      setIsOpen(false);
+                    }}
+                  >
+                    <Phone className="w-6 h-6 mr-3" />
+                    GET QUOTE
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           )}
