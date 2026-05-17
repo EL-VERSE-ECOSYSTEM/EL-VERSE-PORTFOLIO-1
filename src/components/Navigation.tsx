@@ -43,7 +43,7 @@ const Navigation = () => {
           >
             <AnimatedLogo size="sm" />
             <span className="text-2xl font-black font-brand tracking-tighter bg-gradient-primary bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-              EL VERSE
+              EL VERSE ECOSYSTEM
             </span>
           </motion.div>
           

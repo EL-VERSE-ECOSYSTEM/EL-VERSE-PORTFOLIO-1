@@ -212,7 +212,7 @@ const Contact = () => {
         {/* Footer Link */}
         <div className="text-center">
           <p className="text-muted-foreground font-bold text-sm tracking-widest uppercase">
-            Part of the <span className="text-primary">EL VERSE TECHNOLOGIES</span> Universe
+            Part of the <span className="text-primary">EL VERSE ECOSYSTEM</span> Universe
           </p>
         </div>
       </div>

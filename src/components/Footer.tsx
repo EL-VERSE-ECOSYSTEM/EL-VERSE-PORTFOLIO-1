@@ -92,7 +92,7 @@ const Footer = () => {
               <div className="bg-primary/10 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-500">
                 <img src={elVerseLogo} alt="EL VERSE" className="w-10 h-10 object-contain" />
               </div>
-              <span className="text-3xl font-black tracking-tighter font-brand">EL VERSE</span>
+              <span className="text-3xl font-black tracking-tighter font-brand">EL VERSE ECOSYSTEM</span>
             </div>
             <p className="text-muted-foreground max-w-sm leading-relaxed font-medium">
               Architecting the digital future of Africa. We bridge global innovation with local excellence.
@@ -264,12 +264,12 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-muted-foreground">
-            © {currentYear} EL VERSE. All rights reserved. Benin Republic, Côte d'Ivoire, EU & Remote.
+            © {currentYear} EL VERSE ECOSYSTEM. All rights reserved. Benin Republic, Côte d'Ivoire, EU & Remote.
           </div>
 
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> and
-            <Code2 className="w-4 h-4 text-primary" /> by ELCODERS, The Development Arm, Sub Startup of EL VERSE
+            <Code2 className="w-4 h-4 text-primary" /> by ELCODERS, The Development Arm, Sub Startup of EL VERSE ECOSYSTEM
           </div>
         </div>
       </div>
