@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Users, Rocket, Globe, GraduationCap, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
-import elVerseLogo from "@/assets/el-verse-logo-new.png";
+import AnimatedLogo from "./AnimatedLogo";
 
 const Hero = () => {
   return (
@@ -25,9 +25,8 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col items-center justify-center mb-8"
         >
-          <div className="relative mb-6">
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-150 animate-pulse" />
-            <img src={elVerseLogo} alt="EL VERSE" className="w-32 h-32 md:w-40 md:h-40 relative z-10" />
+          <div className="mb-6">
+            <AnimatedLogo size="lg" />
           </div>
           <h1 className="text-6xl md:text-9xl font-black font-display bg-gradient-primary bg-clip-text text-transparent tracking-tighter leading-none mb-4">
             EL VERSE
