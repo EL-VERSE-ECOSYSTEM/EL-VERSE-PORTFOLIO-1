@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Heart, Code2 } from "lucide-react";
+import { Heart, Code2, Rocket } from "lucide-react";
 import elVerseLogo from "@/assets/el-verse-logo.png";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
