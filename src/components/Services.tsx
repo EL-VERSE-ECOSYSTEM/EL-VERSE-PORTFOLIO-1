@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 import { 
   Code2, 
   Users, 
@@ -8,8 +9,7 @@ import {
   Network, 
   GraduationCap,
   ExternalLink,
-  Calendar,
-  MapPin
+  ArrowRight
 } from "lucide-react";
 import elcodersLogo from "@/assets/elcoders-logo.jpg";
 import elaccessLogo from "@/assets/el-access-new.jpg";
@@ -26,10 +26,10 @@ const Services = () => {
       description: "Elite software development powerhouse",
       details: "Premier team of 70+ expert developers crafting cutting-edge web applications, mobile solutions, and enterprise-grade software that transforms businesses and accelerates digital innovation across Africa.",
       status: "Active",
-      link: "https://elcoders-devs.vercel.app/",
-      color: "bg-primary",
+      link: "https://elcoders-connect.vercel.app/",
+      color: "from-blue-600 to-cyan-500",
       logo: elcodersLogo,
-      features: ["Full-Stack Development", "Automations", "Mobile Applications", "Enterprise Solutions", "AI Development", "Blockchain", "Backend and Frontend Development", "Cloud Architecture", "DevOps & Azure Deployment", "API Integration"]
+      features: ["Full-Stack Development", "Automations", "AI Development", "Cloud Architecture"]
     },
     {
       id: "elaccess",
@@ -38,10 +38,34 @@ const Services = () => {
       description: "Elite tech talent community",
       details: "An exclusive society connecting ambitious tech students, interns, and emerging professionals with industry leaders. Part of our 70+ professional network providing world-class mentorship and career pathways.",
       status: "Active",
-      link: "https://el-accsess-2-registration.netlify.app/",
-      color: "bg-accent",
+      link: "https://el-access.vercel.app/",
+      color: "from-purple-600 to-pink-500",
       logo: elaccessLogo,
-      features: ["Elite Mentorship", "Industry Networking", "Advanced Skill Development", "Career Acceleration", "Project Collaboration", "Leadership Training"]
+      features: ["Elite Mentorship", "Industry Networking", "Career Acceleration", "Leadership Training"]
+    },
+    {
+      id: "elites",
+      icon: GraduationCap,
+      title: "ELITES",
+      description: "West Africa's premier tech academy",
+      details: "Revolutionary tech education institute transforming careers across West Africa. Led by our 70+ industry professionals, we provide curriculum and placement programs for the next tech leaders.",
+      status: "Active",
+      link: "https://elites-connect.vercel.app/",
+      color: "from-green-600 to-emerald-500",
+      logo: elitesLogo,
+      features: ["Intensive Bootcamps", "Industry Certifications", "100% Placement", "Mentorship"]
+    },
+    {
+      id: "elspace",
+      icon: Network,
+      title: "EL SPACE",
+      description: "Freelance arm of EL VERSE TECHNOLOGIES",
+      details: "Next-generation platform revolutionizing how tech professionals connect with enterprises. Powered by our ecosystem of 70+ experts, it offers AI-powered matching and seamless project collaboration.",
+      status: "Active",
+      link: "https://el-space.vercel.app/",
+      color: "from-orange-600 to-yellow-500",
+      logo: elspaceLogo,
+      features: ["AI-Powered Matching", "Blockchain Verification", "Enterprise Portal", "Global Talent"]
     },
     {
       id: "nexel",
@@ -51,176 +75,142 @@ const Services = () => {
       details: "The future of authentic social connection. Developed by our elite 70+ tech team, NEXEL redefines social media with privacy-first design, AI-powered content curation, and meaningful community building.",
       status: "Coming August 2026",
       link: "#",
-      color: "bg-success",
+      color: "from-indigo-600 to-blue-500",
       logo: nexelLogo,
-      features: ["Privacy-First Design", "AI Content Curation", "Community Building", "Authentic Connections", "Creator Economy", "Cross-Platform Sync", "Content Earning and Marketplace"]
-    },
-    {
-      id: "elspace",
-      icon: Network,
-      title: "EL SPACE",
-      description: "Freelance arm of EL VERSE TECHNOLOGIES",
-      details: "Next-generation platform revolutionizing how tech professionals connect with enterprises. Powered by our ecosystem of 70+ experts, it offers AI-powered matching and seamless project collaboration.",
-      status: "Coming July 2026",
-      link: "#",
-      color: "bg-warning",
-      logo: elspaceLogo,
-      features: ["AI-Powered Matching", "Blockchain Verification", "Enterprise Portal", "Global Talent Pool", "Smart Contracts", "Real-time Collaboration"]
-    },
-    {
-      id: "elites",
-      icon: GraduationCap,
-      title: "ELITES",
-      description: "West Africa's premier tech academy",
-      details: "Revolutionary tech education institute transforming careers across West Africa. Led by our 70+ industry professionals, we provide curriculum and placement programs for the next tech leaders.",
-      status: "Coming June 2026",
-      link: "#",
-      color: "bg-success",
-      logo: elitesLogo,
-      features: ["Intensive Bootcamps", "Industry Certifications", "100% Placement Guarantee", "Corporate Partnerships", "Mentorship Programs", "Continuous Learning"]
+      features: ["Privacy-First Design", "AI Content Curation", "Community Building", "Creator Economy"]
     }
   ];
 
-  const getStatusColor = (status: string) => {
-    if (status === "Active") return "bg-success text-success-foreground";
-    if (status.includes("2026")) return "bg-primary text-primary-foreground";
-    return "bg-warning text-warning-foreground";
-  };
-
   return (
-    <section id="services" className="py-24 bg-gradient-to-br from-card via-card/95 to-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(66,153,225,0.1),transparent_50%)]"></div>
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-primary"></div>
-      
+    <section id="services" className="py-32 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-24"
+        >
+          <Badge className="mb-6 bg-primary/10 text-primary px-4 py-1.5 text-sm font-bold tracking-widest uppercase">
             Our Tech Ecosystem
-          </div>
-          <h2 className="text-5xl md:text-6xl font-black font-display mb-8 tracking-wide">
+          </Badge>
+          <h2 className="text-5xl md:text-7xl font-black font-display mb-8 tracking-tighter">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Tech Universe</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Discover our comprehensive ecosystem of technology solutions, 
-            from enterprise software development to revolutionary social platforms.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
+            Discover a comprehensive ecosystem of technology solutions designed to empower
+            the next generation of African innovation.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
-          {services.map((service) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={service.id} className="group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 border-border/50 hover:border-primary/50 bg-card/80 backdrop-blur-sm hover:scale-[1.02]">
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      {service.logo ? (
-                        <img src={service.logo} alt={`${service.title} logo`} className="w-12 h-12 rounded-lg object-cover" />
-                      ) : (
-                        <div className={`p-3 rounded-lg ${service.color} text-white`}>
-                          <IconComponent className="w-6 h-6" />
-                        </div>
-                      )}
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="group relative h-full overflow-hidden border-primary/10 bg-card/50 backdrop-blur-md hover:border-primary/40 transition-all duration-500">
+                  <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${service.color}`} />
+
+                  <CardHeader className="pt-8">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="relative">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-20 blur-xl rounded-full`} />
+                        <img
+                          src={service.logo}
+                          alt={service.title}
+                          className="w-16 h-16 rounded-2xl object-cover relative z-10 border border-white/10 shadow-2xl"
+                        />
+                      </div>
+                      <Badge variant={service.status === "Active" ? "default" : "secondary"} className="font-bold">
+                        {service.status}
+                      </Badge>
                     </div>
-                    <Badge className={getStatusColor(service.status)}>
-                      {service.status}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl font-bold font-display tracking-wide">{service.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent>
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                    {service.details}
-                  </p>
+                    <CardTitle className="text-2xl font-black tracking-tight mb-2 uppercase">{service.title}</CardTitle>
+                    <CardDescription className="text-primary font-bold text-sm">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
                   
-                  <div className="mb-6">
-                    <h4 className="font-semibold mb-3 text-foreground">Key Features:</h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {service.features.map((feature, index) => (
-                        <div key={index} className="text-sm text-muted-foreground flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                  <CardContent className="space-y-6">
+                    <p className="text-muted-foreground text-sm leading-relaxed font-medium">
+                      {service.details}
+                    </p>
+
+                    <div className="grid grid-cols-2 gap-3">
+                      {service.features.map((feature, i) => (
+                        <div key={i} className="flex items-center gap-2 text-xs font-bold text-foreground/80">
+                          <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${service.color}`} />
                           {feature}
                         </div>
                       ))}
                     </div>
-                  </div>
-                  
-                  <div className="flex gap-3">
-                    {service.link !== "#" ? (
-                      <Button 
-                        variant="default" 
-                        size="sm" 
-                        className="flex-1 bg-gradient-primary hover:opacity-90 text-white font-medium transition-all duration-300 transform hover:scale-[1.02] active:scale-95"
-                        onClick={() => window.open(service.link, '_blank')}
-                      >
-                        Explore Now <ExternalLink className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
-                      </Button>
-                    ) : (
-                      <div className="flex gap-2 w-full">
-                        <Button variant="outline" size="sm" className="flex-1 border-primary/50 hover:bg-primary/10 transition-colors" disabled>
-                          {service.status.includes("Coming") ? "Coming Soon" : "Learn More"}
+
+                    <div className="pt-4">
+                      {service.link !== "#" ? (
+                        <Button
+                          className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white font-black py-6 rounded-xl transition-all duration-300 group`}
+                          onClick={() => window.open(service.link, '_blank')}
+                        >
+                          EXPLORE PLATFORM <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
                         </Button>
-                        <Button size="sm" className="bg-primary/20 hover:bg-primary/30 text-primary border-primary/50 transition-all duration-300 transform hover:scale-[1.02] active:scale-95">
-                          Notify Me
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className="w-full py-6 rounded-xl border-primary/20 font-bold hover:bg-primary/5"
+                          disabled
+                        >
+                          LAUNCHING SOON
                         </Button>
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             );
           })}
         </div>
         
-        {/* Enhanced CTA Section */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl p-12 border border-primary/20">
-            <h3 className="text-3xl md:text-4xl font-bold font-display mb-6">
-              Ready to Transform Your Business?
+        {/* Unified Ecosystem CTA */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-24 p-12 rounded-[2.5rem] bg-gradient-primary relative overflow-hidden group"
+        >
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
+          <div className="relative z-10 text-center">
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-6 tracking-tighter">
+              Ready to Join the Universe?
             </h3>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join 100+ satisfied clients who trust EL VERSE for their technology needs. 
-              Let's build something extraordinary together.
+            <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto font-medium">
+              Whether you're looking for elite software solutions, tech training, or
+              exclusive career opportunities, EL VERSE is your destination.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 size="lg" 
-                className="bg-gradient-primary hover:opacity-90 text-white font-semibold px-8"
+                variant="secondary"
+                className="h-16 px-10 text-lg font-black bg-white text-primary hover:bg-white/90 rounded-2xl shadow-2xl"
                 onClick={() => window.open("https://wa.link/4cwtqf", "_blank")}
               >
-                Start Your Project
+                START A PROJECT
               </Button>
               <Button 
-                variant="outline" 
                 size="lg" 
-                className="border-primary/50 hover:bg-primary/10 px-8"
+                variant="outline"
+                className="h-16 px-10 text-lg font-black border-white text-white hover:bg-white/10 rounded-2xl"
                 onClick={() => window.open("https://wa.link/4cwtqf", "_blank")}
               >
-                Schedule Consultation
+                CONSULTATION
               </Button>
             </div>
           </div>
-        </div>
-        
-        {/* Location & Timeline Info */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-8 bg-muted/50 p-6 rounded-2xl backdrop-blur-sm border border-border/50">
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <MapPin className="w-5 h-5 text-primary" />
-              <span className="font-medium">Benin Republic, Côte d'Ivoire, EU & Remote</span>
-            </div>
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <Calendar className="w-5 h-5 text-accent" />
-              <span className="font-medium">Expanding Across West Africa</span>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
