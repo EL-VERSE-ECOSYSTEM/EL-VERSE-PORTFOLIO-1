@@ -111,7 +111,7 @@ const Footer = () => {
             <h4 className="text-sm font-black uppercase tracking-[0.2em] mb-8 text-foreground/70">Our Universe</h4>
             <ul className="space-y-4 text-sm font-bold">
               {[
-                { name: "ELCODERS", url: "https://elcoders-connect.vercel.app/" },
+                { name: "ELCODERS", url: "https://elcoders-devs.vercel.app/" },
                 { name: "EL ACCESS", url: "https://el-access.vercel.app/" },
                 { name: "ELITES", url: "https://elites-connect.vercel.app/" },
                 { name: "EL SPACE", url: "https://el-space.vercel.app/" },

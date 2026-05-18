@@ -4,24 +4,24 @@
     <loc>https://el-verse-connect.vercel.app/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
   </url>
   <url>
     <loc>https://el-verse-connect.vercel.app/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
   </url>
   <url>
     <loc>https://el-verse-connect.vercel.app/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
   </url>
   <url>
     <loc>https://el-verse-connect.vercel.app/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2026-05-17</lastmod>
+    <lastmod>2026-05-18</lastmod>
   </url>
 </urlset>

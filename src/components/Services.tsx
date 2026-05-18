@@ -26,7 +26,7 @@ const Services = () => {
       description: "Elite software development powerhouse",
       details: "Premier team of 70+ expert developers crafting cutting-edge web applications, mobile solutions, and enterprise-grade software that transforms businesses and accelerates digital innovation across Africa.",
       status: "Active",
-      link: "https://elcoders-connect.vercel.app/",
+      link: "https://elcoders-devs.vercel.app/",
       color: "from-blue-600 to-cyan-500",
       logo: elcodersLogo,
       features: ["Full-Stack Development", "Automations", "AI Development", "Cloud Architecture"]
