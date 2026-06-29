@@ -6,6 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingSupport from "@/components/FloatingSupport";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import AnnouncementPopup from "@/components/AnnouncementPopup";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const Index = () => {
@@ -25,6 +26,7 @@ const Index = () => {
       />
 
       <AnimatedBackground />
+      <AnnouncementPopup />
 
       <div className="relative z-10">
         <Navigation />

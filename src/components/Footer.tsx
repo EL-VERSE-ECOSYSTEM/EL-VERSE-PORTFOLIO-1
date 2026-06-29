@@ -113,7 +113,7 @@ const Footer = () => {
               {[
                 { name: "ELCODERS", url: "https://elcoders-devs.vercel.app/" },
                 { name: "EL ACCESS", url: "https://el-access.vercel.app/" },
-                { name: "ELITES", url: "https://elites-connect.vercel.app/" },
+                { name: "ELITES", url: "https://elites-onboarding.vercel.app/" },
                 { name: "EL SPACE", url: "https://el-space.vercel.app/" },
                 { name: "NEXEL", url: "#", note: "Aug 2026" }
               ].map((link) => (
