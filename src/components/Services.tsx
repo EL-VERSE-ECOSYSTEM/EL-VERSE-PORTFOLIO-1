@@ -50,7 +50,7 @@ const Services = () => {
       description: "West Africa's premier tech academy",
       details: "Revolutionary tech education institute transforming careers across West Africa. Led by our 70+ industry professionals, we provide curriculum and placement programs for the next tech leaders.",
       status: "Active",
-      link: "https://elites-connect.vercel.app/",
+      link: "https://elites-onboarding.vercel.app/",
       color: "from-green-600 to-emerald-500",
       logo: elitesLogo,
       features: ["Intensive Bootcamps", "Industry Certifications", "100% Placement", "Mentorship"]
