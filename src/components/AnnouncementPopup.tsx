@@ -14,18 +14,14 @@ const AnnouncementPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const hasSeenAnnouncement = localStorage.getItem("elites-launch-announcement");
-    if (!hasSeenAnnouncement) {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 2000); // Show after 2 seconds
-      return () => clearTimeout(timer);
-    }
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 2000); // Show after 2 seconds
+    return () => clearTimeout(timer);
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("elites-launch-announcement", "true");
   };
 
   return (
