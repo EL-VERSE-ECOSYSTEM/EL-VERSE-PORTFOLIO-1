@@ -8,10 +8,10 @@ interface AnimatedLogoProps {
 
 const AnimatedLogo = ({ className = "", size = "md" }: AnimatedLogoProps) => {
   const sizeClasses = {
-    sm: "w-8 h-8",
-    md: "w-10 h-10",
-    lg: "w-32 h-32 md:w-40 md:h-40",
-    xl: "w-48 h-48 md:w-64 md:h-64",
+    sm: "w-10 h-10",
+    md: "w-16 h-16",
+    lg: "w-36 h-36 md:w-44 md:h-44",
+    xl: "w-52 h-52 md:w-72 md:h-72",
   };
 
   return (
@@ -26,52 +26,56 @@ const AnimatedLogo = ({ className = "", size = "md" }: AnimatedLogoProps) => {
       }}
       className={`relative group ${className}`}
     >
-      {/* Animated Glow Effect */}
+      {/* Outer Glowing Dynamic Ring */}
       <motion.div
         animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
+          scale: [1, 1.15, 1],
+          opacity: [0.4, 0.8, 0.4],
+          rotate: [0, 180, 360],
         }}
         transition={{
-          duration: 4,
+          duration: 6,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: "linear",
         }}
-        className="absolute inset-0 bg-primary/30 blur-2xl rounded-full"
+        className="absolute inset-0 bg-gradient-to-tr from-primary via-accent to-secondary blur-md rounded-full p-[3px] shadow-[0_0_30px_rgba(var(--primary),0.3)]"
       />
 
-      {/* Floating Animation */}
+      {/* Floating & Perfectly Round Inner Container */}
       <motion.div
         animate={{
-          y: [0, -10, 0],
+          y: [0, -8, 0],
         }}
         transition={{
           duration: 3,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="relative z-10"
+        className="relative z-10 bg-background rounded-full p-1.5 border border-primary/20 aspect-square flex items-center justify-center overflow-hidden"
+        style={{ width: "100%", height: "100%" }}
       >
-        <motion.img
-          src={elVerseLogo}
-          alt="EL VERSE Logo"
-          className={`${sizeClasses[size]} object-contain`}
-          whileHover={{
-            scale: 1.1,
-            rotate: 5,
-            filter: "brightness(1.2) drop-shadow(0 0 15px rgba(var(--primary), 0.5))"
-          }}
-          transition={{ type: "spring", stiffness: 300 }}
-        />
+        <motion.div className="rounded-full overflow-hidden bg-background w-full h-full flex items-center justify-center">
+          <motion.img
+            src={elVerseLogo}
+            alt="EL VERSE Logo"
+            className={`${sizeClasses[size]} rounded-full object-cover aspect-square`}
+            whileHover={{
+              scale: 1.15,
+              rotate: 8,
+              filter: "brightness(1.1) contrast(1.1)",
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+          />
+        </motion.div>
       </motion.div>
 
-      {/* Orbiting particles or ring effect */}
+      {/* Futuristic Orbiting Dot Ring */}
       <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-[-20%] border border-primary/10 rounded-full pointer-events-none"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+        className="absolute inset-[-15%] border border-dashed border-primary/20 rounded-full pointer-events-none"
       >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full blur-[1px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent rounded-full shadow-[0_0_8px_rgba(var(--accent),0.8)]" />
       </motion.div>
     </motion.div>
   );
