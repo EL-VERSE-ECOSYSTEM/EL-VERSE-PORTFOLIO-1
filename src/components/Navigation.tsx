@@ -49,7 +49,7 @@ const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {['services', 'about', 'contact'].map((item, index) => (
+            {['services', 'about', 'faq', 'contact'].map((item, index) => (
               <motion.button
                 key={item}
                 initial={{ opacity: 0, y: -10 }}
@@ -65,7 +65,7 @@ const Navigation = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.5 }}
             >
               <Button
                 size="sm"
@@ -122,7 +122,7 @@ const Navigation = () => {
               className="fixed inset-0 z-40 md:hidden bg-background/98 backdrop-blur-3xl flex flex-col justify-center items-center"
             >
               <div className="flex flex-col space-y-8 p-6 text-center">
-                {['services', 'about', 'contact'].map((item, index) => (
+                {['services', 'about', 'faq', 'contact'].map((item, index) => (
                   <motion.button
                     key={item}
                     initial={{ opacity: 0, y: 20 }}
@@ -137,7 +137,7 @@ const Navigation = () => {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.5 }}
                 >
                   <Button
                     size="lg"
