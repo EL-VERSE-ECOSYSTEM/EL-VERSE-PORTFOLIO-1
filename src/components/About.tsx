@@ -12,6 +12,7 @@ import {
   Sparkles
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
+import supremeElyonPhoto from "@/assets/supreme-elyon.png";
 
 const About = () => {
   return (
@@ -152,14 +153,21 @@ const About = () => {
           <h3 className="text-4xl font-black mb-12 tracking-tight uppercase">The Visionary</h3>
           <Card className="max-w-xl mx-auto border-primary/10 bg-card/50 backdrop-blur-md rounded-[2.5rem] overflow-hidden group">
             <CardContent className="p-12">
-              <div className="w-32 h-32 bg-gradient-primary rounded-[2rem] flex items-center justify-center mx-auto mb-8 shadow-2xl group-hover:rotate-12 transition-transform duration-500">
-                <span className="text-4xl font-black text-white">SE</span>
+              <div className="relative w-44 h-44 mx-auto mb-8">
+                {/* Glowing Aura backdrop */}
+                <div className="absolute inset-0 bg-gradient-primary blur-xl opacity-35 rounded-full scale-105" />
+                <div className="relative z-10 w-full h-full rounded-[2.5rem] overflow-hidden border border-primary/20 bg-background flex items-center justify-center aspect-square shadow-2xl group-hover:rotate-6 transition-transform duration-500">
+                  <img
+                    src={supremeElyonPhoto}
+                    alt="Supreme Elyon"
+                    className="w-full h-full object-cover rounded-[2.5rem]"
+                  />
+                </div>
               </div>
               <h4 className="text-3xl font-black mb-2 uppercase tracking-tight">Supreme Elyon</h4>
-              <p className="text-primary font-black text-sm tracking-[0.2em] mb-6 uppercase">Founder & CEO</p>
+              <p className="text-primary font-black text-sm tracking-[0.2em] mb-6 uppercase">FOUNDER AND PRESIDENT/CEO</p>
               <p className="text-xl text-muted-foreground leading-relaxed font-medium">
-                A pioneering force in the African tech ecosystem, dedicated to creating
-                sustainable digital solutions that empower millions across the continent.
+                A pioneering force in the West African tech ecosystem. As FOUNDER AND PRESIDENT/CEO of EL VERSE ECOSYSTEM, Supreme Elyon directs a talent-to-income grid connecting skilled minds directly with premium enterprise software pipelines.
               </p>
             </CardContent>
           </Card>
