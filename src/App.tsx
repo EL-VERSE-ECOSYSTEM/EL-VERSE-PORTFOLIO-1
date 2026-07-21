@@ -6,6 +6,8 @@ import Index from "./pages/Index";
 import Elites from "./pages/Elites";
 import ElCoders from "./pages/ElCoders";
 import ElSpace from "./pages/ElSpace";
+import ElAccess from "./pages/ElAccess";
+import Nexel from "./pages/Nexel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +22,8 @@ const App = () => (
           <Route path="/elites" element={<Elites />} />
           <Route path="/elcoders" element={<ElCoders />} />
           <Route path="/elspace" element={<ElSpace />} />
+          <Route path="/elaccess" element={<ElAccess />} />
+          <Route path="/nexel" element={<Nexel />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
