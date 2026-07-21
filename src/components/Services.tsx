@@ -11,7 +11,7 @@ import {
   ExternalLink,
   ArrowRight
 } from "lucide-react";
-import elcodersLogo from "@/assets/elcoders-logo.jpg";
+import elcodersLogo from "@/assets/elcoders-logo.png";
 import elaccessLogo from "@/assets/el-access-new.jpg";
 import nexelLogo from "@/assets/nexel-new.jpg";
 import elitesLogo from "@/assets/elites-new.jpg";
