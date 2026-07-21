@@ -1,8 +1,25 @@
-# Welcome to your Lovable project
+# EL VERSE ECOSYSTEM - Premier Tech Universe in West Africa
 
-## Project info
+Welcome to the official repository of **EL VERSE ECOSYSTEM**. This portal acts as a "skills-to-income" pipeline that connects tech learning with real earning.
 
-**URL**: https://lovable.dev/projects/d65df920-0efd-40ee-9ab0-3b66599afceb
+This React + Vite application is built using Tailwind CSS, TypeScript, and Framer Motion. It is optimized to perform seamlessly on any screen size and is built to convert visitors and leads into active ecosystem participants.
+
+## Key Search & SEO Optimization (Google Rankings)
+
+To maximize Google Search discovery and visibility, we've integrated several advanced SEO enhancements:
+
+### 1. Dedicated FAQ Section with Schema.org JSON-LD Markup
+The application hosts a beautifully designed, highly interactive, and completely responsive **Frequently Asked Questions (FAQ)** section answering critical queries about the ecosystem:
+- **What is the EL VERSE ECOSYSTEM?**
+- **What are the five arms of EL VERSE and how do they work together?** (Presented via a clean desktop table and dynamic mobile grid layout)
+- **What makes EL VERSE ECOSYSTEM different from other platforms?**
+
+Within `src/components/FAQ.tsx`, valid **Schema.org JSON-LD structured data (`FAQPage`)** is programmatically injected directly into the document `<head>`. This guarantees that Google crawlers will parse and display rich, eye-catching question-answer snippets in organic search rankings.
+
+### 2. Comprehensive Sitemap Coverage
+Our `public/sitemap.xml` file has been updated to explicitly target our sub-sections (`#services`, `#about`, `#faq`, and `#contact`) with appropriate priority ratings and update frequencies. This helps crawl bots index specific content segments easily.
+
+---
 
 ## How can I edit this code?
 
@@ -36,38 +53,12 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
 ## What technologies are used for this project?
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d65df920-0efd-40ee-9ab0-3b66599afceb) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Vite** & **TypeScript**
+- **React** with **Framer Motion** for sleek transitions and high-performance loading state experiences
+- **shadcn-ui** & **Tailwind CSS**
