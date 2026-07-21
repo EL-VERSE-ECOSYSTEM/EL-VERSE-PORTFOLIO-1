@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, ChevronDown, Sparkles, BookOpen, Cpu, Network, Home } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, Sparkles, BookOpen, Cpu, Network, Home, Building2, Atom } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 import AnimatedLogo from "./AnimatedLogo";
@@ -54,6 +54,8 @@ const Navigation = () => {
     { name: "ELITES Academy", path: "/elites", icon: BookOpen, desc: "Onboarding & mentorship", color: "text-green-400" },
     { name: "EL CODERS Software", path: "/elcoders", icon: Cpu, desc: "Bespoke development", color: "text-blue-400" },
     { name: "EL SPACE Freelance", path: "/elspace", icon: Network, desc: "Global matchmaking", color: "text-orange-400" },
+    { name: "EL ACCESS Talent", path: "/elaccess", icon: Building2, desc: "Placement & contracts", color: "text-purple-400" },
+    { name: "NEXEL AI Research", path: "/nexel", icon: Atom, desc: "Advanced AI R&D", color: "text-rose-400" },
   ];
 
   return (
@@ -203,15 +205,15 @@ const Navigation = () => {
                 </button>
 
                 {/* Subpage Links explicitly stated */}
-                <div className="py-4 border-y border-primary/10 space-y-4">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-primary">Ecosystem Subpages</p>
+                <div className="py-4 border-y border-primary/10 space-y-3 max-h-[40vh] overflow-y-auto">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-primary">Ecosystem Hubs</p>
                   {arms.map((arm) => (
                     <button
                       key={arm.path}
                       onClick={() => navigateToPage(arm.path)}
-                      className="block w-full text-lg font-bold text-foreground hover:text-primary transition-colors uppercase tracking-tight"
+                      className="block w-full text-sm font-black text-foreground hover:text-primary transition-colors uppercase tracking-widest"
                     >
-                      {arm.name.split(" ")[1]} Academy
+                      {arm.name}
                     </button>
                   ))}
                 </div>
