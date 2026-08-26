@@ -151,13 +151,49 @@ const About = () => {
           className="text-center"
         >
           <h3 className="text-4xl font-black mb-12 tracking-tight uppercase">Ecosystem Leadership</h3>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+          {/* Main Founder & President/CEO Card */}
+          <div className="max-w-3xl mx-auto mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="border-primary/30 bg-card/70 backdrop-blur-lg rounded-[3rem] overflow-hidden group hover:border-primary/60 transition-all duration-500 shadow-2xl relative">
+                <div className="absolute top-6 right-6 z-20">
+                  <Badge className="bg-primary/20 text-primary border-primary/30 px-4 py-1.5 text-xs font-black tracking-widest uppercase">
+                    Ecosystem Founder
+                  </Badge>
+                </div>
+                <CardContent className="p-10 md:p-12 flex flex-col items-center text-center">
+                  <div className="relative w-44 h-44 mx-auto mb-8">
+                    <div className="absolute inset-0 bg-gradient-primary blur-2xl opacity-50 rounded-full scale-110" />
+                    <div className="relative z-10 w-full h-full rounded-[2.5rem] overflow-hidden border-2 border-primary/30 bg-background flex items-center justify-center p-5 shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                      <img
+                        src={elVerseLogo}
+                        alt="EL VERSE ECOSYSTEM Logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  <h4 className="text-3xl font-black mb-3 uppercase tracking-tight text-foreground">
+                    IFEANYI ELYON (Supreme Elyon)
+                  </h4>
+                  <p className="text-primary font-black text-sm tracking-[0.2em] mb-6 uppercase">
+                    FOUNDER AND PRESIDENT/CEO
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed text-base font-medium max-w-xl mx-auto">
+                    A pioneering force in the West African tech ecosystem directing a talent-to-income grid connecting skilled minds directly with premium enterprise software pipelines.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+
+          {/* Sub Executive Officers Cards */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              {
-                name: "IFEANYI ELYON (Supreme Elyon)",
-                role: "FOUNDER AND PRESIDENT/CEO",
-                description: "A pioneering force in the West African tech ecosystem directing a talent-to-income grid connecting skilled minds directly with premium enterprise software pipelines."
-              },
               {
                 name: "George Abel",
                 role: "Senior Financial Officer",
@@ -174,13 +210,13 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: 0.2 + index * 0.1 }}
               >
-                <Card className="h-full border-primary/10 bg-card/50 backdrop-blur-md rounded-[2.5rem] overflow-hidden group hover:border-primary/30 transition-all duration-500">
+                <Card className="h-full border-primary/10 bg-card/40 backdrop-blur-md rounded-[2.5rem] overflow-hidden group hover:border-primary/30 transition-all duration-500">
                   <CardContent className="p-8 flex flex-col items-center text-center h-full">
-                    <div className="relative w-36 h-36 mx-auto mb-6">
-                      <div className="absolute inset-0 bg-gradient-primary blur-xl opacity-35 rounded-full scale-105" />
-                      <div className="relative z-10 w-full h-full rounded-[2rem] overflow-hidden border border-primary/20 bg-background flex items-center justify-center p-4 shadow-2xl group-hover:rotate-6 transition-transform duration-500">
+                    <div className="relative w-32 h-32 mx-auto mb-6">
+                      <div className="absolute inset-0 bg-gradient-primary blur-xl opacity-30 rounded-full scale-105" />
+                      <div className="relative z-10 w-full h-full rounded-[2rem] overflow-hidden border border-primary/20 bg-background flex items-center justify-center p-4 shadow-xl group-hover:rotate-6 transition-transform duration-500">
                         <img
                           src={elVerseLogo}
                           alt="EL VERSE ECOSYSTEM Logo"
@@ -189,7 +225,7 @@ const About = () => {
                       </div>
                     </div>
                     <h4 className="text-xl font-black mb-2 uppercase tracking-tight">{leader.name}</h4>
-                    <p className="text-primary font-black text-xs tracking-[0.15em] mb-4 uppercase">{leader.role}</p>
+                    <p className="text-primary/90 font-bold text-xs tracking-[0.15em] mb-4 uppercase">{leader.role}</p>
                     <p className="text-muted-foreground leading-relaxed text-sm font-medium mt-auto">
                       {leader.description}
                     </p>
