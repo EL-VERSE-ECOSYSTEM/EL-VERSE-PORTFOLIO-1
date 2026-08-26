@@ -12,7 +12,7 @@ import {
   Sparkles
 } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
-import supremeElyonPhoto from "@/assets/supreme-elyon.png";
+import elVerseLogo from "@/assets/el-verse-logo.png";
 
 const About = () => {
   return (
@@ -150,27 +150,54 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-4xl font-black mb-12 tracking-tight uppercase">The Visionary</h3>
-          <Card className="max-w-xl mx-auto border-primary/10 bg-card/50 backdrop-blur-md rounded-[2.5rem] overflow-hidden group">
-            <CardContent className="p-12">
-              <div className="relative w-44 h-44 mx-auto mb-8">
-                {/* Glowing Aura backdrop */}
-                <div className="absolute inset-0 bg-gradient-primary blur-xl opacity-35 rounded-full scale-105" />
-                <div className="relative z-10 w-full h-full rounded-[2.5rem] overflow-hidden border border-primary/20 bg-background flex items-center justify-center aspect-square shadow-2xl group-hover:rotate-6 transition-transform duration-500">
-                  <img
-                    src={supremeElyonPhoto}
-                    alt="Supreme Elyon"
-                    className="w-full h-full object-cover rounded-[2.5rem]"
-                  />
-                </div>
-              </div>
-              <h4 className="text-3xl font-black mb-2 uppercase tracking-tight">Supreme Elyon</h4>
-              <p className="text-primary font-black text-sm tracking-[0.2em] mb-6 uppercase">FOUNDER AND PRESIDENT/CEO</p>
-              <p className="text-xl text-muted-foreground leading-relaxed font-medium">
-                A pioneering force in the West African tech ecosystem. As FOUNDER AND PRESIDENT/CEO of EL VERSE ECOSYSTEM, Supreme Elyon directs a talent-to-income grid connecting skilled minds directly with premium enterprise software pipelines.
-              </p>
-            </CardContent>
-          </Card>
+          <h3 className="text-4xl font-black mb-12 tracking-tight uppercase">Ecosystem Leadership</h3>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                name: "IFEANYI ELYON (Supreme Elyon)",
+                role: "FOUNDER AND PRESIDENT/CEO",
+                description: "A pioneering force in the West African tech ecosystem directing a talent-to-income grid connecting skilled minds directly with premium enterprise software pipelines."
+              },
+              {
+                name: "George Abel",
+                role: "Senior Financial Officer",
+                description: "Overseeing financial strategies, capital allocation, and sustainable growth mechanisms across all divisions of EL VERSE ECOSYSTEM."
+              },
+              {
+                name: "Jerry Ameachi",
+                role: "Senior Technical Officer",
+                description: "Driving tech architecture, engineering execution, and technical standard excellence across all enterprise software operations."
+              }
+            ].map((leader, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="h-full border-primary/10 bg-card/50 backdrop-blur-md rounded-[2.5rem] overflow-hidden group hover:border-primary/30 transition-all duration-500">
+                  <CardContent className="p-8 flex flex-col items-center text-center h-full">
+                    <div className="relative w-36 h-36 mx-auto mb-6">
+                      <div className="absolute inset-0 bg-gradient-primary blur-xl opacity-35 rounded-full scale-105" />
+                      <div className="relative z-10 w-full h-full rounded-[2rem] overflow-hidden border border-primary/20 bg-background flex items-center justify-center p-4 shadow-2xl group-hover:rotate-6 transition-transform duration-500">
+                        <img
+                          src={elVerseLogo}
+                          alt="EL VERSE ECOSYSTEM Logo"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
+                    <h4 className="text-xl font-black mb-2 uppercase tracking-tight">{leader.name}</h4>
+                    <p className="text-primary font-black text-xs tracking-[0.15em] mb-4 uppercase">{leader.role}</p>
+                    <p className="text-muted-foreground leading-relaxed text-sm font-medium mt-auto">
+                      {leader.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
