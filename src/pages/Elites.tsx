@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,6 +30,18 @@ const Elites = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary/30">
+      <SEO
+        title="ELITES Academy - West Africa's Premier Tech Bootcamps | EL VERSE"
+        description="Empowering emerging tech talent in West Africa with world-class mentor-guided bootcamps, real-world commercial software projects, and paid internship pipelines."
+        canonicalUrl="https://el-verse-connect.vercel.app/elites"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          "name": "ELITES Academy",
+          "url": "https://el-verse-connect.vercel.app/elites",
+          "description": "Premier tech academy offering intensive bootcamps and mentorship in West Africa."
+        }}
+      />
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />

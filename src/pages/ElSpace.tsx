@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,6 +28,18 @@ const ElSpace = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary/30">
+      <SEO
+        title="EL SPACE - AI-Powered Remote Freelance Tech Network | EL VERSE"
+        description="Connecting vetted African tech talent directly with global enterprise needs. Instant AI matchmaking, verified developer pedigree, and project milestone protection."
+        canonicalUrl="https://el-verse-connect.vercel.app/elspace"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "EL SPACE Freelance Grid",
+          "url": "https://el-verse-connect.vercel.app/elspace",
+          "description": "AI-powered freelance matchmaking platform connecting African developer talent globally."
+        }}
+      />
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />
