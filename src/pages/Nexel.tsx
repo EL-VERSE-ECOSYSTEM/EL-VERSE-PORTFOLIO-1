@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -76,6 +77,18 @@ const Nexel = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary/30 overflow-x-hidden">
+      <SEO
+        title="NEXEL - Advanced AI Research & Innovation Incubation | EL VERSE"
+        description="The experimental R&D core of EL VERSE ECOSYSTEM. Incubating decentralized computing protocols, custom micro-SaaS networks, and cognitive AI model tuning."
+        canonicalUrl="https://el-verse-connect.vercel.app/nexel"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ResearchOrganization",
+          "name": "NEXEL AI Labs",
+          "url": "https://el-verse-connect.vercel.app/nexel",
+          "description": "Advanced AI and incubation research arm exploring decentralized computing and cognitive agent models."
+        }}
+      />
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />

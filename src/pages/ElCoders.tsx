@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,6 +30,18 @@ const ElCoders = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary/30">
+      <SEO
+        title="EL CODERS - Enterprise Software Development & AI Powerhouse | EL VERSE"
+        description="Elite software engineering powerhouse of 70+ expert developers delivering bespoke enterprise web apps, AI automations, and cloud architecture across West Africa and globally."
+        canonicalUrl="https://el-verse-connect.vercel.app/elcoders"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "EL CODERS Software House",
+          "url": "https://el-verse-connect.vercel.app/elcoders",
+          "description": "Enterprise software engineering powerhouse developing web applications and AI solutions."
+        }}
+      />
       <AnimatedBackground />
       <div className="relative z-10">
         <Navigation />
