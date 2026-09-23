@@ -68,22 +68,23 @@ const ElCoders = () => {
             {/* Grid of Perks */}
             <div className="grid md:grid-cols-4 gap-6 mb-24">
               {[
-                { icon: Server, title: "Robust Stack", desc: "Scale-ready production setups using TypeScript, Node, and secure cloud setups." },
-                { icon: Cpu, title: "Deep AI Tuning", desc: "Integrate LLM nodes, cognitive task handlers, and advanced data engines." },
-                { icon: Workflow, title: "Premium UI/UX", desc: "Sleek, fluid, and conversion-optimized web designs built using Tailwind and motion." },
-                { icon: Layers, title: "100% Pedigree", desc: "Tested across multiple high-traffic West African and international startups." }
+                { icon: Server, title: "Robust Stack", desc: "Scale-ready production setups using TypeScript, React, Node.js, and secure cloud architectures." },
+                { icon: Cpu, title: "Deep AI Tuning", desc: "Integrate LLM nodes, cognitive task handlers, and advanced AI workflow automations." },
+                { icon: Workflow, title: "Premium UI/UX", desc: "Sleek, fluid, and conversion-optimized web designs built using modern Tailwind CSS and motion." },
+                { icon: Layers, title: "100% Pedigree", desc: "Tested across multiple high-traffic West African and international commercial enterprises." }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -6, scale: 1.02 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  transition={{ type: "spring", stiffness: 300, delay: idx * 0.1 }}
                 >
-                  <Card className="border-blue-500/10 bg-card/40 backdrop-blur-md hover:border-blue-500/30 transition-all rounded-2xl h-full">
+                  <Card className="border-blue-500/20 bg-card/50 backdrop-blur-xl hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all rounded-2xl h-full">
                     <CardContent className="p-6 text-center space-y-3">
-                      <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto text-blue-400">
-                        {React.createElement(item.icon, { className: "w-5 h-5" })}
+                      <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto text-blue-400 border border-blue-500/20">
+                        {React.createElement(item.icon, { className: "w-6 h-6" })}
                       </div>
                       <h4 className="text-base font-black uppercase tracking-tight text-foreground">{item.title}</h4>
                       <p className="text-xs text-muted-foreground leading-relaxed font-semibold">{item.desc}</p>

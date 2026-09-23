@@ -65,23 +65,24 @@ const Elites = () => {
             {/* Grid of Perks */}
             <div className="grid md:grid-cols-3 gap-8 mb-24">
               {[
-                { icon: BookOpen, title: "Curriculum Excellence", desc: "Up-to-date courses aligned with direct global workspace requirements.", text: "text-green-400" },
-                { icon: Users, title: "1-on-1 Mentorship", desc: "Guided by our team of 70+ professional engineers and architects.", text: "text-emerald-400" },
-                { icon: Trophy, title: "Internship Pipeline", desc: "Successful graduates gain priority placement into paid EL ACCESS assignments.", text: "text-teal-400" }
+                { icon: BookOpen, title: "Curriculum Excellence", desc: "Up-to-date courses aligned with direct global workspace requirements and real commercial codebases.", text: "text-green-400" },
+                { icon: Users, title: "1-on-1 Mentorship", desc: "Guided directly by our elite team of 70+ professional software engineers, architects, and product leads.", text: "text-emerald-400" },
+                { icon: Trophy, title: "Internship Pipeline", desc: "Successful graduates gain priority direct placement into paid EL ACCESS corporate internship assignments.", text: "text-teal-400" }
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -6, scale: 1.02 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
+                  transition={{ type: "spring", stiffness: 300, delay: idx * 0.1 }}
                 >
-                  <Card className="border-green-500/10 bg-card/40 backdrop-blur-md hover:border-green-500/30 transition-all rounded-[2rem]">
+                  <Card className="border-green-500/20 bg-card/50 backdrop-blur-xl hover:border-green-500/50 hover:shadow-2xl hover:shadow-green-500/10 transition-all rounded-[2rem] h-full">
                     <CardContent className="p-8 text-center space-y-4">
-                      <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mx-auto text-green-400">
-                        {React.createElement(item.icon, { className: "w-6 h-6" })}
+                      <div className="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center mx-auto text-green-400 border border-green-500/20">
+                        {React.createElement(item.icon, { className: "w-7 h-7" })}
                       </div>
-                      <h3 className="text-xl font-black uppercase tracking-tight">{item.title}</h3>
+                      <h3 className="text-xl font-black uppercase tracking-tight text-foreground">{item.title}</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
                     </CardContent>
                   </Card>
