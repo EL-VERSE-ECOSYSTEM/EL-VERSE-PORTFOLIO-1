@@ -1,13 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Landing Page -->
   <url>
     <loc>https://el-verse-connect.vercel.app/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <lastmod>2026-08-26</lastmod>
   </url>
+
+  <!-- Ecosystem Subpages / Hubs -->
+  <url>
+    <loc>https://el-verse-connect.vercel.app/elites</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://el-verse-connect.vercel.app/elcoders</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://el-verse-connect.vercel.app/elspace</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://el-verse-connect.vercel.app/elaccess</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://el-verse-connect.vercel.app/nexel</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+
+  <!-- Interactive Landing Sections -->
   <url>
     <loc>https://el-verse-connect.vercel.app/#services</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://el-verse-connect.vercel.app/#visualizer</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-26</lastmod>
+  </url>
+  <url>
+    <loc>https://el-verse-connect.vercel.app/#wizard</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <lastmod>2026-08-26</lastmod>
@@ -20,44 +67,14 @@
   </url>
   <url>
     <loc>https://el-verse-connect.vercel.app/#faq</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <lastmod>2026-08-26</lastmod>
   </url>
   <url>
     <loc>https://el-verse-connect.vercel.app/#contact</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-08-26</lastmod>
-  </url>
-  <url>
-    <loc>https://el-verse-connect.vercel.app/elites</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-08-26</lastmod>
-  </url>
-  <url>
-    <loc>https://el-verse-connect.vercel.app/elcoders</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-08-26</lastmod>
-  </url>
-  <url>
-    <loc>https://el-verse-connect.vercel.app/elspace</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-08-26</lastmod>
-  </url>
-  <url>
-    <loc>https://el-verse-connect.vercel.app/elaccess</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2026-08-26</lastmod>
-  </url>
-  <url>
-    <loc>https://el-verse-connect.vercel.app/nexel</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <lastmod>2026-08-26</lastmod>
   </url>
 </urlset>

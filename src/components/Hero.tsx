@@ -81,28 +81,43 @@ const Hero = () => {
           </Button>
         </motion.div>
         
+        {/* Animated Badge Pill */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 backdrop-blur-md px-5 py-2 rounded-full mb-8 text-xs font-black uppercase tracking-widest text-primary shadow-lg"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          Unified African Tech Architecture
+        </motion.div>
+
         {/* Stats */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto p-8 rounded-3xl bg-background/40 backdrop-blur-md border border-primary/10 shadow-2xl"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto p-8 rounded-[2rem] bg-background/50 backdrop-blur-2xl border border-primary/15 shadow-2xl relative overflow-hidden"
         >
-          <div className="text-center group">
-            <div className="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform">70+</div>
-            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Tech Pros</div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full" />
+          <div className="text-center group cursor-pointer">
+            <motion.div whileHover={{ scale: 1.15 }} transition={{ type: "spring", stiffness: 300 }} className="text-4xl md:text-5xl font-black bg-gradient-primary bg-clip-text text-transparent mb-2">70+</motion.div>
+            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Expert Developers</div>
           </div>
-          <div className="text-center group">
-            <div className="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform">5</div>
-            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Divisions</div>
+          <div className="text-center group cursor-pointer">
+            <motion.div whileHover={{ scale: 1.15 }} transition={{ type: "spring", stiffness: 300 }} className="text-4xl md:text-5xl font-black bg-gradient-primary bg-clip-text text-transparent mb-2">5</motion.div>
+            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Ecosystem Hubs</div>
           </div>
-          <div className="text-center group">
-            <div className="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform">2020</div>
-            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Est. Year</div>
+          <div className="text-center group cursor-pointer">
+            <motion.div whileHover={{ scale: 1.15 }} transition={{ type: "spring", stiffness: 300 }} className="text-4xl md:text-5xl font-black bg-gradient-primary bg-clip-text text-transparent mb-2">2020</motion.div>
+            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Founded</div>
           </div>
-          <div className="text-center group">
-            <div className="text-4xl md:text-5xl font-black text-primary mb-2 group-hover:scale-110 transition-transform">100%</div>
-            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Excellence</div>
+          <div className="text-center group cursor-pointer">
+            <motion.div whileHover={{ scale: 1.15 }} transition={{ type: "spring", stiffness: 300 }} className="text-4xl md:text-5xl font-black bg-gradient-primary bg-clip-text text-transparent mb-2">100%</motion.div>
+            <div className="text-xs md:text-sm font-bold text-muted-foreground uppercase tracking-widest">Quality Guarantee</div>
           </div>
         </motion.div>
       </div>
