@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Code2, Rocket } from "lucide-react";
@@ -111,22 +112,33 @@ const Footer = () => {
             <h4 className="text-sm font-black uppercase tracking-[0.2em] mb-8 text-foreground/70">Our Universe</h4>
             <ul className="space-y-4 text-sm font-bold">
               {[
-                { name: "ELCODERS", url: "https://elcoders-devs.vercel.app/" },
-                { name: "EL ACCESS", url: "https://el-access.vercel.app/" },
-                { name: "ELITES", url: "https://elites-onboarding.vercel.app/" },
-                { name: "EL SPACE", url: "https://el-space.vercel.app/" },
-                { name: "NEXEL", url: "#", note: "Aug 2026" }
+                { name: "ELCODERS", url: "https://elcoders-devs.vercel.app/", isExternal: true },
+                { name: "EL ACCESS", url: "https://el-access.vercel.app/", isExternal: true },
+                { name: "ELITES", url: "https://elites-onboarding.vercel.app/", isExternal: true },
+                { name: "EL SPACE", url: "https://el-space.vercel.app/", isExternal: true },
+                { name: "NEXEL", url: "/nexel", isExternal: false, note: "Aug 2026" },
+                { name: "Insights & Blog", url: "/blog", isExternal: false }
               ].map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-all flex items-center gap-2 group"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/20 group-hover:bg-primary transition-colors" />
-                    {link.name} {link.note && <span className="text-[10px] opacity-50">({link.note})</span>}
-                  </a>
+                  {link.isExternal ? (
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-all flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary/20 group-hover:bg-primary transition-colors" />
+                      {link.name} {link.note && <span className="text-[10px] opacity-50">({link.note})</span>}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.url}
+                      className="text-muted-foreground hover:text-primary transition-all flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary/20 group-hover:bg-primary transition-colors" />
+                      {link.name} {link.note && <span className="text-[10px] opacity-50">({link.note})</span>}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -263,8 +275,17 @@ const Footer = () => {
         <Separator className="my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-sm text-muted-foreground">
-            © {currentYear} EL VERSE ECOSYSTEM. All rights reserved. Benin Republic, Côte d'Ivoire, EU & Remote.
+          <div className="text-sm text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span>© {currentYear} EL VERSE ECOSYSTEM. All rights reserved.</span>
+            <div className="flex items-center gap-3 text-xs">
+              <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline">
+                Privacy Policy
+              </Link>
+              <span>·</span>
+              <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline">
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
 
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
