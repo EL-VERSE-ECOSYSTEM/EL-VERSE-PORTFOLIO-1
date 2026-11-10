@@ -100,7 +100,59 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
+
+  /* Custom smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(220 26% 5%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(185 100% 45% / 0.3);
+    border-radius: 9999px;
+    border: 2px solid hsl(220 26% 5%);
+    transition: background-color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(185 100% 45% / 0.7);
+  }
+}
+
+/* Immersive aura and glowing mesh utilities */
+.glass-panel-glow {
+  background: rgba(10, 15, 29, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glow-ambient-cyan {
+  position: relative;
+}
+
+.glow-ambient-cyan::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.18), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }

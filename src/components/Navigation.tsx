@@ -135,6 +135,16 @@ const Navigation = () => {
               </motion.button>
             ))}
 
+            <button
+              onClick={() => navigateToPage("/blog")}
+              className={`group relative transition-all duration-300 font-bold uppercase text-xs tracking-widest flex items-center gap-1.5 ${
+                location.pathname.startsWith("/blog") ? "text-primary" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full" />
+            </button>
+
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -227,6 +237,13 @@ const Navigation = () => {
                     {item}
                   </button>
                 ))}
+
+                <button
+                  onClick={() => navigateToPage("/blog")}
+                  className="text-xl font-black text-muted-foreground hover:text-foreground transition-all duration-300 uppercase tracking-tight"
+                >
+                  Blog
+                </button>
 
                 <div className="pt-6">
                   <Button
