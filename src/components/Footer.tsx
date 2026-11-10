@@ -150,7 +150,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm font-bold">
               {[
                 { label: "WhatsApp", val: "+234 806 190 8715", href: "https://wa.link/4cwtqf" },
-                { label: "Email", val: "support@elverse.com", href: "mailto:elcoderssoftwares12@gmail.com" },
+                { label: "Email", val: "elversetechnologies@gmail.com", href: "mailto:elversetechnologies@gmail.com" },
                 { label: "Twitter", val: "@ElVerse27", href: "https://twitter.com/ElVerse27" },
                 { label: "Instagram", val: "el_verse1", href: "https://instagram.com/el_verse1" }
               ].map((item) => (

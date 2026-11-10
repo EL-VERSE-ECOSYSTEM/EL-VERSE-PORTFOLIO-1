@@ -36,7 +36,7 @@ const Privacy = () => {
               Effective Date: November 2026 · Last Updated: November 2026
             </p>
 
-            <div className="p-6 rounded-2xl bg-card/60 backdrop-blur-xl border border-primary/10 text-muted-foreground leading-relaxed text-sm md:text-base space-y-4">
+            <div className="p-6 md:p-8 rounded-3xl glass-panel-glow text-muted-foreground leading-relaxed text-sm md:text-base space-y-4">
               <p>
                 At <span className="text-foreground font-semibold">EL VERSE ECOSYSTEM</span> ("we", "our", or "us"), we prioritize the privacy and digital security of all individuals who access our ecosystem platforms, including <strong>ELCODERS</strong>, <strong>ELITES Academy</strong>, <strong>EL SPACE</strong>, <strong>EL ACCESS</strong>, and <strong>NEXEL Labs</strong>.
               </p>

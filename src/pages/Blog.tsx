@@ -108,8 +108,9 @@ const Blog = () => {
                 key={post.slug}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
                 transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="group relative flex flex-col rounded-3xl bg-card/40 backdrop-blur-2xl border border-primary/10 overflow-hidden hover:border-primary/30 transition-all duration-500 shadow-2xl hover:shadow-primary/10"
+                className="group relative flex flex-col rounded-3xl bg-card/40 backdrop-blur-2xl border border-primary/10 overflow-hidden hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-[0_20px_50px_rgba(6,182,212,0.15)]"
               >
                 {/* Image */}
                 <Link to={`/blog/${post.slug}`} className="block relative aspect-[16/9] overflow-hidden bg-black/40">

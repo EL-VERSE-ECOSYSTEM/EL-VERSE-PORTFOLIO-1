@@ -292,7 +292,7 @@ ELITES is designed to get you from the first category to the second — with str
 
 ---
 
-ELITES is part of the **EL VERSE ECOSYSTEM** — five arms, one platform, from learning to earning. Learn more at [el-verse-connect.vercel.app](https://el-verse-connect.vercel.app).
+ELITES is part of the **EL VERSE ECOSYSTEM** — five arms, one platform, from learning to earning. Explore our ecosystem hubs across ELCODERS, ELITES, EL SPACE, EL ACCESS, and NEXEL.
     `,
   },
 ];

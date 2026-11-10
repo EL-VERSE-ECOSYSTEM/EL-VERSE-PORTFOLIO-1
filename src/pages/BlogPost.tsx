@@ -4,17 +4,33 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import { blogPosts } from "@/data/blogPosts";
-import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, Clock, Share2, Tag, Check, ArrowRight } from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { ArrowLeft, Calendar, Clock, Share2, Tag, Check, ArrowRight, ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const post = blogPosts.find((p) => p.slug === slug);
 
@@ -149,12 +165,32 @@ const BlogPost = () => {
 
   return (
     <div className="relative min-h-screen bg-background text-foreground selection:bg-primary/30">
+      {/* Reading Progress Indicator */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-sky-400 origin-left z-50 shadow-[0_0_12px_rgba(6,182,212,0.8)]"
+        style={{ scaleX }}
+      />
+
       <SEO
         title={`${post.title} | EL VERSE Blog`}
         description={post.summary}
         canonicalUrl={`https://el-verse-connect.vercel.app/blog/${post.slug}`}
       />
       <AnimatedBackground />
+
+      {/* Floating scroll to top */}
+      {showScrollTop && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Scroll to top"
+          className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-primary/20 backdrop-blur-xl border border-primary/40 text-primary hover:bg-primary hover:text-black transition-all shadow-xl hover:shadow-primary/30"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </motion.button>
+      )}
 
       <div className="relative z-10">
         <Navigation />

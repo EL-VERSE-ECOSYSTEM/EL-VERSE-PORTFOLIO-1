@@ -36,7 +36,7 @@ const Terms = () => {
               Effective Date: November 2026 · Ecosystem Agreement v2.6
             </p>
 
-            <div className="p-6 rounded-2xl bg-card/60 backdrop-blur-xl border border-primary/10 text-muted-foreground leading-relaxed text-sm md:text-base space-y-4">
+            <div className="p-6 md:p-8 rounded-3xl glass-panel-glow text-muted-foreground leading-relaxed text-sm md:text-base space-y-4">
               <p>
                 Welcome to <strong>EL VERSE ECOSYSTEM</strong>. By visiting, browsing, registering for, or engaging with our platforms (including ELCODERS, ELITES, EL SPACE, EL ACCESS, NEXEL, and affiliate products like EL Learners), you confirm that you have read, understood, and agreed to be bound by these Terms & Conditions.
               </p>
